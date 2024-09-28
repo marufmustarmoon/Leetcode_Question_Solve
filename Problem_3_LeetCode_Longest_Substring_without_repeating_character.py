@@ -4,18 +4,17 @@ def lengthOfLongestSubstring(s: str) -> int:
     length = 0
     for end in range(len(s)):
         char = s[end]
-        if char not in longest:
-            longest[char]=True
-            length = max(length,end-start+1)
-
-        else:
-            while longest[char]:
-                    longest[s[end]]=False
-                    start= start + 1
-
-            longest[s[end]]=True
+        
+        if char in longest and longest[char] >= start:
+            start = longest[char] + 1
+        
+        longest[char] = end   
+        
+        length = max(length, end - start + 1)
+    
     return length
 
-s = "abcabcbb"
+
+s = "pwwkew"
 result = lengthOfLongestSubstring(s)
-print(result)
+print(result)  
