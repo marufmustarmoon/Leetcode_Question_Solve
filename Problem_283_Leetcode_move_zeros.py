@@ -9,16 +9,9 @@ def moveZeroes(nums) -> None:
             end +=1
 
         return nums
-                  
-                  
-                  
-                  
-                  
-            
-              
-        
-           
-        return nums
+   
+    
+
             
  
 
